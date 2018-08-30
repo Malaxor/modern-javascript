@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Variable Declaration</title>
+</head>	
+	
+<body>
+	<script type="text/javascript">
+
+		// VAR
+		var randomName = 'John Doe';
+		console.log(randomName);
+		randomName = 'Steve Smith';
+		console.log(randomName);
+		console.log('------------------------');
+		
+		// initialize a variable
+		var greeting;
+		console.log(greeting); // undefined
+		greeting = 'Hello';
+		console.log(greeting);
+		console.log('------------------------');		
+		// variable names can contain only letters, numbers, _ , $ (placed anywhere in the name)
+		// variables can't start with a number
+
+		/* variable conventions */
+		console.log('------------------------');		
+		// camelCase // SUGGESTED
+		var firstName = 'Philip';
+		console.log(firstName);
+		// underscore 
+		var first_name = 'Sarah';
+		console.log(first_name);
+		// PascalCase
+		var FirstName = 'Tom';
+		console.log(FirstName);
+
+		// LET
+		console.log('------------------------');
+		let name = 'John Doe';
+		console.log(name);
+		name = 'Steve Smith';
+		console.log(name);
+		console.log('------------------------');
+
+		// CONST
+		// can't reasign a const variable
+		// have to asign a value to const 
+		// const meeting; // ERROR
+		// can mutate the data inside an object or an array declared with const; just can't reasign the variable name
+		const person = {
+			name: 'Philip',
+			age: 35
+		};
+		person.name = 'Me';
+		console.log(person);
+		
+		const nums = [1,2,3];
+		nums.unshift(0);
+		console.log(nums);
+
+
+
+
+	</script>
+</body>
+</html>
