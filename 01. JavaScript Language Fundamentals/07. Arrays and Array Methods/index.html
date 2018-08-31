@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays and Array Methods</title>
+</head>	
+	
+<body>
+	<script type="text/javascript">
+
+		// create some arrays
+		const numbers = [1, 4, 99, 9, 5, 0];
+		const numbers2 = new Array(22, 45, 887, 58585);
+
+		const fruit = ['Apple', 'Banana', 'Orange', 'Pear'];
+		const mixed = [22, 'Me', true, undefined, null, {a: 1, b: 2}, new Date()];
+		
+		let val;
+
+		// get array length
+		val = numbers.length;
+		// check if is array
+		val = Array.isArray(numbers);
+		// get a single value
+		val = numbers[1];
+		// insert into array
+		numbers[2] = 100;
+		// find index of value
+		val = numbers.indexOf(9);
+
+		// MUTATING ARRAYS
+		numbers.push(250); // append to array (last index)
+		numbers.unshift(111); // prepend to array (first index)
+
+		numbers.pop(); // remove last index
+		numbers.shift(); // remove firt index
+
+		numbers.splice(1, 1); // first number represents the starting index; second number is how many to remove
+
+		numbers.reverse(); // reverse the elements inside the array
+		val = numbers.concat(numbers2);
+
+		val = fruit.sort(); // sorts alphabetically
+		val = numbers.sort();
+		// use the compare function to sort numbers
+		val = numbers.sort((a, b) => a - b);
+		// reverse sort (highest to lowest)
+		val = numbers.sort((a, b) => b - a);
+
+		// Find
+		function under50(num) {
+			return num < 50;
+		}
+		val = numbers.find(under50); // finds the first number in the array that's under 50
+
+		console.log(numbers);
+		console.log(val);
+
+
+	</script>
+</body>
+</html>
