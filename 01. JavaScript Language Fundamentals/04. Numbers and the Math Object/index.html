@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Types</title>
+</head>	
+	
+<body>
+	<script type="text/javascript">
+		//==========================================================================================
+		// There are two types of data in JavaScript: Primitive and Reference
+		
+		// Primitive Data
+		// 1) Stored directly in the location of the variable
+		// 2) Stored on the stack
+		// 3) Types: String, Number, Boolean, Null, Undefined, Symbols (ES6)
+
+		// Reference Data
+		// 1) Accessed by reference
+		// 2) Objects that are stored on the heap
+		// 3) A pointer to a location in memory
+		// 4) Types: Arrays, Object Literals, Functions, Dates
+
+		// Types are associated with values, not variables
+		// The same variable can hold multiple types
+		//==========================================================================================
+		
+		// Primitive Data Types
+
+		// String
+		const name = 'John Doe';
+		console.log(typeof name);
+
+		// Number
+		const age = 35;
+		console.log(typeof age);
+
+		// Boolean
+		const hasKids = true;
+		console.log(typeof hasKids);
+
+		// Null
+		const car = null;
+		console.log(typeof car);
+
+		// Undefined
+		let test;
+		console.log(typeof test);
+
+		// Symbol
+		const sym = Symbol();
+		console.log(sym);
+		console.log('----------------');
+		
+
+		// Reference Data Types (objects)
+
+		// Array
+		const hobbies = ['movies', 'music'];
+		console.log(typeof hobbies);
+
+		// Object literal
+		const address = {
+			city: 'Boston',
+			state: 'MA'
+		};
+		console.log(typeof address);
+
+
+		// Date
+		const today = new Date();
+		console.log(today);
+		console.log(typeof today);
+
+	</script>
+</body>
+</html>
