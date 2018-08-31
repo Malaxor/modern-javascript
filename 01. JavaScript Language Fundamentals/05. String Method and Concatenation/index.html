@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Method and Concatenation</title>
+</head>	
+	
+<body>
+	<script type="text/javascript">
+
+		const firstName = 'William';
+		const lastName = 'Johnson';
+		const age = 36;
+
+		const str = 'Hello! My name is Brad';
+		const tags = 'web design, web development, web stuff'
+
+		let val;
+
+		val = firstName + lastName;
+
+		// concatenation
+		val = firstName + ' ' + lastName;
+
+		// append
+		val = 'Brad ';
+		val += 'Traversy';
+
+		val = 'Hello! My name is ' + firstName + ' and I am ' + age;
+
+		// escaping
+		val = 'That\'s awesome; I can\'t wait';
+
+		// length
+		val = firstName.length;
+		
+		// concat()
+		val = firstName.concat(' ', lastName);
+
+		// toUpperCase()
+		val = firstName.toUpperCase();
+		val = firstName.toLowerCase();
+
+		// finding a character in a string
+		val = firstName[0];
+		// indexOf()
+		val = firstName.indexOf('l');
+		// lastIndexOf()
+		val = firstName.lastIndexOf('l');
+		// charAt()
+		val = firstName.charAt(2);
+		// get last character
+		val = firstName.charAt(firstName.length - 1);
+
+		// substring
+		val = firstName.substring(0, 4);
+		// slice
+		val = firstName.slice(0, 4); // from index 0 to index 4, but not including index 4
+		// split()
+		val = str.split(' ');
+		val = tags.split(',');
+		// replace()
+		val = str.replace('Brad', 'Jack');
+		// includes()
+		val = str.includes('Hello!'); // returns a boolean
+
+
+		console.log(val);
+
+	</script>
+</body>
+</html>
