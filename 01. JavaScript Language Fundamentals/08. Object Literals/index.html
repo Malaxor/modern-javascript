@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Literals</title>
+</head>	
+	
+<body>
+	<script type="text/javascript">
+
+		const person = {
+
+			firstName: 'Philip',
+			lastName: 'Smith',
+			age: 30,
+			email: 'phil@aol.com',
+			hobbies: ['music', 'sports'],
+			address: {
+				city: 'Detroit',
+				state: 'MI'
+			},
+			getBirthYear() {
+				return 2017 - this.age;
+			}
+		};
+		let val;
+		// accessing properties on the object
+		val = person; // object
+		val = person.firstName; // Philip
+		val = person['firstName']; // Philip
+		val = person.age; // 35
+		val = person.hobbies[1]; // sports
+		val = person.address.state; // MI
+		val = person.address['city']; // Detroit
+		val = person.getBirthYear(); // 1983
+
+		console.log(val);
+
+		const people = [
+			{ name: 'Philip', age: 35},
+			{ name: 'John', age: 100},
+			{ name: 'Nancy', age: 40}
+		];
+
+		for(let i = 0; i < people.length; i++) {
+
+			console.log(people[i].name);
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>

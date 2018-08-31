@@ -1,45 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Numbers and the Math Object</title>
+	<title>Data Types</title>
 </head>	
 	
 <body>
 	<script type="text/javascript">
+		//==========================================================================================
+		// There are two types of data in JavaScript: Primitive and Reference
+		
+		// Primitive Data
+		// 1) Stored directly in the location of the variable
+		// 2) Stored on the stack
+		// 3) Types: String, Number, Boolean, Null, Undefined, Symbols (ES6)
 
-		const num1 = 100;
-		const num2 = 50;
-		let val;
+		// Reference Data
+		// 1) Accessed by reference
+		// 2) Objects that are stored on the heap
+		// 3) A pointer to a location in memory
+		// 4) Types: Arrays, Object Literals, Functions, Dates
 
-		// simple math with numbers
-		val = num1 + num2;
-		val = num1 - num2;
-		val = num1 * num2;
-		val = num1 / num2;
-		val = num1 % num2;
+		// Types are associated with values, not variables
+		// The same variable can hold multiple types
+		//==========================================================================================
+		
+		// Primitive Data Types
 
-		// Math Object
-		val = Math.PI;
-		val = Math.E;
+		// String
+		const name = 'John Doe';
+		console.log(typeof name);
 
-		val = Math.round(2.4);
-		val = Math.ceil(2.1);
-		val = Math.floor(2.9);
+		// Number
+		const age = 35;
+		console.log(typeof age);
 
-		val = Math.sqrt(64);
-		val = Math.abs(-3.14);
-		val = Math.pow(2, 2);
+		// Boolean
+		const hasKids = true;
+		console.log(typeof hasKids);
 
-		val = Math.min(2,33,4,1,5,0,-2);
-		val = Math.max(55, 54, 30, 1);
+		// Null
+		const car = null;
+		console.log(typeof car);
 
-		val = Math.random();
-		val = Math.random() * 20;
-		val = Math.floor(Math.random() * 20);
+		// Undefined
+		let test;
+		console.log(typeof test);
 
-		console.log(val);
+		// Symbol
+		const sym = Symbol();
+		console.log(sym);
+		console.log('----------------');
+		
+
+		// Reference Data Types (objects)
+
+		// Array
+		const hobbies = ['movies', 'music'];
+		console.log(typeof hobbies);
+
+		// Object literal
+		const address = {
+			city: 'Boston',
+			state: 'MA'
+		};
+		console.log(typeof address);
 
 
+		// Date
+		const today = new Date();
+		console.log(today);
+		console.log(typeof today);
 
 	</script>
 </body>
