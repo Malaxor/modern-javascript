@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>General Loops</title>
+</head>	
+	
+<body>
+	<script type="text/javascript">
+
+		// FOR LOOP
+		for(let i = 0; i <= 10; i++) {
+
+			if(i === 2) {
+				console.log('2 is my favorite number.');
+				continue;
+			}
+			if(i === 5) {
+				console.log('stop the loop');
+				break; // stops the loop
+			}
+			console.log(i);
+		}
+		console.log('----------------');
+
+		// WHILE LOOP
+		let i = 0;
+
+		while(i < 10) {
+
+			console.log(`Number ${i}`);
+			i++;
+		}
+
+		console.log('----------------');		
+
+		// DO WHILE 
+		// will always run once
+		let x = 0;
+
+		do {
+			console.log(`Number ${x}`);
+			x++;
+		}
+		while(x < 10);
+
+		console.log('----------------');	
+
+		// LOOP THROUGH ARRAY
+		const cars = ['Ford', 'Chevy', 'Honda', 'Toyota'];
+
+		for(let j = 0; j < cars.length; j++) {
+
+			console.log(cars[j]);
+		}
+		// FOREACH
+		cars.forEach((car, index, array) => console.log(`${index}: ${car}`));
+
+		// MAP
+		const users = [
+			{id: 1, name: 'John'},
+			{id: 2, name: 'Sara'},
+			{id: 3, name: 'Karen'}
+		];
+
+		const ids = users.map(user => user.id);
+		console.log(ids);		
+		console.log('----------------');	
+		
+		// FOR IN
+		const user = {
+			
+			firstName: 'John',
+			lastName: 'Doe',
+			age: 40
+		};
+		for(let key in user) {
+			console.log(`${key}: ${user[key]}`);
+		}
+
+	</script>
+</body>
+</html>
