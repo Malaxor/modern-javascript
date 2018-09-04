@@ -1,6 +1,6 @@
-
 // SINGLE ELEMENT SELECTORS //
 //====================================================================
+
 // document.getElementById()
 console.log(document.getElementById('task-title'));
 // set the element into a variable
@@ -34,5 +34,3 @@ document.querySelector('li:nth-child(3)').style.color = 'green';
 document.querySelector('li:nth-child(4)').textContent = 'Hello, World!';
 // won't work for all odd elements because it's a single selector
 document.querySelector('li:nth-child(odd)').style.background = '#ccc';
-
-
