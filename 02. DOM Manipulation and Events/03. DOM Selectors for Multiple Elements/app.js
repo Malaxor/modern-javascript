@@ -1,5 +1,5 @@
 
-// document.getElementsByClassName()
+// // document.getElementsByClassName()
 // const items = document.getElementsByClassName('collection-item');
 
 // console.log(items);
@@ -8,8 +8,8 @@
 // items[0].style.color = 'red';
 // items[3].textContent = 'Hello';
 
-// const listeItems = document.querySelector('ul').getElementsByClassName('colllection-item');
-// console.log(listeItems);
+// const listItems = document.querySelector('ul').getElementsByClassName('colllection-item');
+// console.log(listItems);
 
 // // document.getElementsByTagName()
 // let lis = document.getElementsByTagName('li');
@@ -25,7 +25,7 @@
 // lis.forEach(li => li.textContent='NOT HOTDOG');
 
 // document.querySelectorAll()
-// you don't need to convert HTML Collections into array when using querySelectorAll because
+// you don't need to convert a HTML Collections into an array when using querySelectorAll because
 // it returns a node list instead of an HTML Collection
 // NOTE: can use for loops on HTML Collections // 
 const items = document.querySelectorAll('ul.collection li.collection-item');

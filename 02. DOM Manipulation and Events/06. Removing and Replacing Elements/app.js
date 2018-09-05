@@ -18,6 +18,7 @@ cardAction.replaceChild(newHeading, oldHeading);
 
 // REMOVE ELEMENT //
 //================================================================
+
 const lis = document.querySelectorAll('li');
 const list = document.querySelector('ul');
 
