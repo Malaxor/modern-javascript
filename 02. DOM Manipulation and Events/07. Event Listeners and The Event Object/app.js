@@ -30,5 +30,5 @@ function onClick(e) {
     console.log(val);
 }
 // wit named function
-clearTasks.addEventListener('mouseover', onClick);
+clearTasks.addEventListener('click', onClick);
  
