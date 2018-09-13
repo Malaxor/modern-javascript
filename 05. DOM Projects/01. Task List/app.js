@@ -6,14 +6,6 @@ const clearBtn = document.querySelector('.clear-tasks');
 const filter = document.querySelector('#filter');
 const taskInput = document.querySelector('#task');
 
-// Load all event listeners
-loadEventListeners();
-
-function loadEventListeners() {
-
-    form.addEventListener('submit', addTask);
-}
-
 function addTask(e) {
 
     e.preventDefault();
@@ -30,7 +22,7 @@ function addTask(e) {
     // create new link element
     const link = document.createElement('a');
     link.className = 'delete-item secondary-content';
-    link.innterHTML = '<i class="fa fa-remove"></i>';
+    link.innerHTML = '<i class="fas fa-trash-alt"></i>';
     //append link to the li
     li.appendChild(link);
     // append li to the ul
@@ -38,3 +30,7 @@ function addTask(e) {
     // clear the input
     taskInput.value = '';
 }
+(function loadEventListeners() {
+
+    form.addEventListener('submit', addTask);
+}());
