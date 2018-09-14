@@ -1,17 +1,15 @@
 
-// UI variables
+// UI VARIABLES
 const form = document.getElementById('loan-form');
 const amount = document.getElementById('amount');
 const interest = document.getElementById('interest');
 const years = document.getElementById('years');
-// RESULTS
+// UI RESULTS
 const monthlyPayment = document.getElementById('monthly-payment');
 const totalPayment = document.getElementById('total-payment');
 const totalInterest = document.getElementById('total-interest');
 
-function calculateResults(e) {
-
-    e.preventDefault();
+function calculateResults() {
 
     // Formulas
     const principal = parseFloat(amount.value);
@@ -26,6 +24,11 @@ function calculateResults(e) {
         monthlyPayment.value = monthly.toFixed(2);
         totalPayment.value = (monthly * calculatedPayments).toFixed(2);
         totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2);
+
+        // show results
+        document.getElementById('results').style.display = 'block';
+        // hide loader
+        document.getElementById('loading').style.display = 'none';
     }
     else {
         showError('Please check your numbers');
@@ -53,4 +56,13 @@ function clearError() {
     document.querySelector('.alert').remove();
 }
 
-form.addEventListener('submit', calculateResults);
+form.addEventListener('submit', e => {
+
+    e.preventDefault();
+    // hide results
+    document.getElementById('results').style.display = 'none';
+    // show loader
+    document.getElementById('loading').style.display = 'block';
+
+    setTimeout(calculateResults, 1000);
+});
