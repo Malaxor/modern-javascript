@@ -10,6 +10,7 @@ const taskInput = document.querySelector('#task');
 function addTask(e) {
 
     e.preventDefault();
+
     if(!taskInput.value) {
         alert('Add a task');
     }
@@ -121,6 +122,7 @@ function removeTask(e) {
         }
     }
 }
+
 // remove ALL tasks
 function clearTasks(e) {
     // easy way, but not faster
@@ -146,9 +148,9 @@ function filterTasks(e) {
 
     document.querySelectorAll('.collection-item').forEach(task => {
 
-        const item = task.firstChild.textContent;
+        const item = task.firstChild.textContent.toLowerCase();
 
-        if(item.toLowerCase().indexOf(text) != -1) {
+        if(item.indexOf(text) != -1) {
 
             task.style.display = 'block';
         }
