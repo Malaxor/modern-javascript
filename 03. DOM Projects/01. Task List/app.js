@@ -81,7 +81,6 @@ function getTasks() {
       link.innerHTML = '<i class="fas fa-trash-alt"></i>';
       // Append the link to li
       li.appendChild(link);
-  
       // Append li to ul
       taskList.appendChild(li);
     });
