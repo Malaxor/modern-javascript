@@ -40,6 +40,7 @@ function getExternal() {
     return res.json();
   })
   .then(data => {
+
     const users = data.reduce((output, user) => {
 
       return  output + `<li>${user.login}</li>`;
@@ -50,7 +51,6 @@ function getExternal() {
     console.log(err);
   });
 }
-
 
 document.getElementById('button1').addEventListener('click', getText);
 document.getElementById('button2').addEventListener('click', getJSON);
