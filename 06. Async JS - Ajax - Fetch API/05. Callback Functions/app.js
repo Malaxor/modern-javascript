@@ -26,10 +26,10 @@ const posts = [
 // }
 function createPost(post, callback) {
 
-  setTimeout(() =>{
+  setTimeout(() => {
     posts.push(post);
     callback();
-  }, 2000);
+  }, 1000);
 }
 
 function getPosts() {

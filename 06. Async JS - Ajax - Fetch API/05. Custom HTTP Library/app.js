@@ -3,9 +3,7 @@ const http = new EasyHTTP();
 // GET Posts
 http.get("https://jsonplaceholder.typicode.com/posts", (err, posts) => {
 
-    if(err) {
-        console.log(err);
-    }
+    if(err) console.log(err);
     console.log(posts);
 });
 // GET Post

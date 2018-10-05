@@ -48,7 +48,6 @@ function loadCustomers(e) {
                 </ul>
             `;
             });
-
             document.getElementById('customers').innerHTML = output;
         }
     }
