@@ -8,9 +8,8 @@ function loadCustomer(e) {
     xhr.onload = function() {
 
         if(this.status === 200) {
-    
+        
             const customer = JSON.parse(this.responseText);
-
             const output = `
                 <ul>
                     <li>ID: ${customer.id}</li>
@@ -35,11 +34,11 @@ function loadCustomers(e) {
 
         if(this.status === 200) {
     
-            const customers = JSON.parse(this.responseText);
-            let output = '';
-            customers.forEach(customer => {
+            const parsedCustomers = JSON.parse(this.responseText);
+            
+            const customers = parsedCustomers.reduce((output, customer) => {
 
-                output += `
+                return output + `
                 <ul>
                     <li>ID: ${customer.id}</li>
                     <li>Name: ${customer.name}</li>
@@ -47,8 +46,8 @@ function loadCustomers(e) {
                     <li>Phone: ${customer.phone}</li>
                 </ul>
             `;
-            });
-            document.getElementById('customers').innerHTML = output;
+            }, '');
+            document.getElementById('customers').innerHTML = customers;
         }
     }
     xhr.send();

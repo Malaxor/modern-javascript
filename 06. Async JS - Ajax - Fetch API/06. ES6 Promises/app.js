@@ -23,7 +23,9 @@ function createPost(post) {
 }
 
 function getPosts() {
+
   setTimeout(function() {
+    
     let output = '';
     posts.forEach(function(post){
       output += `<li>${post.title}</li>`;
