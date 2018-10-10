@@ -5,14 +5,20 @@ class GitHub {
 
         this.client_id = "456211eb1bc95daae817";
         this.clinet_secret = "bfde3874f6091e309a8877b668adab32adbbdc06";
+        this.repos_count = 5;
+        this.repos_sort = `created: asc`
     }
     async getUser(user) {
 
-        const response = await fetch(`https://api.github.com/users/${user}?clinet_id=${this.client_id}&client_secret=${this.clinet_secret}`);
-        const profile = await response.json();
+        const profileResponse = await fetch(`https://api.github.com/users/${user}?clinet_id=${this.client_id}&client_secret=${this.clinet_secret}`);
+        const repoResponse = await fetch(`https://api.github.com/users/${user}/repos?per_page=${this.repos_count}&sort=${this.repos_sort}&client_id=${this.client_id}&client_secret=${this.client_secret}`);
+        
+        const profile = await profileResponse.json();
+        const repos = await repoResponse.json();
 
         return {
-            profile
+            profile,
+            repos
         }
     }
 }
