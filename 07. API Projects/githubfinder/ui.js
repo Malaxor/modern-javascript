@@ -21,10 +21,10 @@ class UI {
                         <span class="badge badge-info">Following: ${user.following}</span>
                         <br><br>
                         <ul class="list-group">
-                            <li class="list-group-item">Company: ${user.company}</li>
-                            <li class="list-group-item">Website/Blog: ${user.blog}</li>
-                            <li class="list-group-item">Location: ${user.location}</li>
-                            <li class="list-group-item">Member Since: ${user.created_at}</li>
+                            <li class="list-group-item"><span class="font-weight-bold">Company:</span> ${user.company}</li>
+                            <li class="list-group-item"><span class="font-weight-bold">Website/Blog:</span> ${user.blog}</li>
+                            <li class="list-group-item"><span class="font-weight-bold">Location:</span> ${user.location}</li>
+                            <li class="list-group-item"><span class="font-weight-bold">Member Since</span>: ${user.created_at}</li>
                         </ul>
                     </div>
                 </div>
