@@ -3,7 +3,7 @@ function EasyHTTP() {
 
   this.http = new XMLHttpRequest();
 }
-
+// Get
 EasyHTTP.prototype.get = function(url, callback) {
 
   this.http.open('GET', url, true);
@@ -18,7 +18,7 @@ EasyHTTP.prototype.get = function(url, callback) {
   }
   this.http.send();
 }
-
+// Post
 EasyHTTP.prototype.post = function(url, data, callback) {
 
   this.http.open('POST', url, true);
@@ -30,7 +30,7 @@ EasyHTTP.prototype.post = function(url, data, callback) {
   }
   this.http.send(JSON.stringify(data));
 }
-
+// Put
 EasyHTTP.prototype.put = function(url, data, callback) {
 
   this.http.open('PUT', url, true);
@@ -43,7 +43,7 @@ EasyHTTP.prototype.put = function(url, data, callback) {
 
   this.http.send(JSON.stringify(data));
 }
-
+// Delete
 EasyHTTP.prototype.delete = function(url, callback) {
 
   this.http.open('DELETE', url, true);
