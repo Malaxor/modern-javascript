@@ -70,15 +70,14 @@ bookForm.addEventListener('submit', e => {
         ui.showAlert('Please fill in all fields.', 'error');
     } 
     else {
-        // Add book to list
+        
         ui.addBookToList(book);
         ui.clearFields();
-        // Error message
         ui.showAlert('Book added', 'success');
     }
 });
 
-// Event Listener for delete book
+// Event Listener to delete book
 document.getElementById('book-list').addEventListener('click', e => {
 
     e.preventDefault();

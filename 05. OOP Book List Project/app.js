@@ -72,7 +72,6 @@ bookForm.addEventListener('submit', e => {
         // Add book to list
         ui.addBookToList(book);
         ui.clearFields();
-        // Error message
         ui.showAlert('Book added', 'success');
     }
 });

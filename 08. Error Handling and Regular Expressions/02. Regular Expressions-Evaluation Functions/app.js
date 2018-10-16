@@ -1,33 +1,32 @@
 
 let re;
-re = /hello/;
-re = /hello/i; // i = case insensitive
-// re = /hello/g; // g = global search(doesn't stop at first instance)
+re = /hello/i;
 // console.log(re);
 // console.log(re.source);
 
-// exec() - will return result in an array or null
-// let result = re.exec('hello world');
+// exec() - tries matching the variable re to the string
+// returs the results in an array or null if there is no match
+const result = re.exec('hello world');
 // console.log(result);
 // console.log(result[0]);
 // console.log(result.index);
 // console.log(result.input);
 
-// test() - returns true or false
-// result = re.test('Hello');
-// console.log(result);
+// test() - returns true of ralse if there's an exact match
+const result1 = re.test('Hello');
+// console.log(result1);
 
-// match() - return result array or null
-// let str = 'Hello There';
-// result = str.match(re);
-// console.log(result);
+// match() - returns result array or null (similar to exec)
+let str = 'Hello there';
+const result2 = str.match(re);
+console.log(result2);
 
-// search() - returns index of the first match. If not found, it returns -1
-// str = 'Hello There';
-// result = str.search(re);
-// console.log(result);
+// search() - returns starting index of the first match
+str = 'Brad, Hello There'
+const result3 = str.search(re);
+console.log(result3);
 
-// replace() - returns a new string with some or all matches of a pattern
+// replace() - returns a new string, with some or all matches of a pattern
 str = 'Hello There';
-let newStr = str.replace(re, 'Hi');
+const newStr = str.replace(re, 'Hi');
 console.log(newStr);
