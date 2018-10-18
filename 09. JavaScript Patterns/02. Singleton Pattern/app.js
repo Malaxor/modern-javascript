@@ -12,11 +12,11 @@ const  Singletong = (() => {
 
     getInstance() {
 
-        if(!instance) {
+      if(!instance) {
 
-            instance = createInstance();
-        }
-        return instance;
+        instance = createInstance();
+      }
+      return instance;
     }
   }
 })();

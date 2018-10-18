@@ -43,7 +43,6 @@ const SuperMembership = function(name) {
   this.cost = '$25';
 }
 
-
 const members = [];
 const factory = new MemberFactory();
 
