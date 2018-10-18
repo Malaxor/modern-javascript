@@ -29,15 +29,41 @@ const ItemCtrl = (function() {
   return {
 
     logData() {
+
       return data;
-    }
+	},
+	getItems() {
+
+		return data.items;
+	}
   }
 }());
 
 // UI CONTROLLER
 const UICtrl = (function() {
 
+	const UISelectors = {
 
+		itemList: '#item-list'
+	}
+	return {
+
+		populateItemList(items) {
+
+			const HTMLItems = items.reduce((emptyStr, item) => {
+
+				return emptyStr + `
+					<li class="collection-item" id="item-${item.id}">
+						<strong>${item.name}: </strong> <em>${item.calories} Calories</em>
+						<a href="#" class="secondary-content">
+				  			<i class="edit-item fa fa-pencil"></i>
+						</a>
+			  		</li>	
+				`;
+			}, '');
+			document.querySelector(UISelectors.itemList).innerHTML = HTMLItems;
+		}
+	}
 }());
 
 // APP CONTROLLER
@@ -46,7 +72,9 @@ const App = (function(ItemCtrl, UICtrl) {
 	return {
 
 		init() {
-			console.log('Initializing App');
+
+			const items = ItemCtrl.getItems();
+			UICtrl.populateItemList(items);
 		}
 	}
 }(ItemCtrl, UICtrl));
