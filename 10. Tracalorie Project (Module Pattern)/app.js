@@ -30,22 +30,44 @@ const ItemCtrl = (function() {
 
     logData() {
 
-      return data;
-	},
-	getItems() {
+    	return data;
+		},
+		getItems() {
 
-		return data.items;
-	}
+			return data.items;
+		},
+		addItem(name, calories) {
+
+			let ID;
+
+			if(data.items.length > 0) {
+
+				ID = data.items[data.items.length - 1].id + 1;
+			}
+			else {
+
+				ID = 0;
+			}
+			calories = parseInt(calories);
+
+			const newItem = new Item(ID, name, calories);
+			data.items.push(newItem);
+			return newItem;
+		}
   }
 }());
 
 // UI CONTROLLER
 const UICtrl = (function() {
-
+	// Private Variables
 	const UISelectors = {
 
-		itemList: '#item-list'
+		itemList: '#item-list',
+		addBtn: '.add-btn',
+		itemNameInput: '#item-name',
+		itemCaloriesInput: '#item-calories'
 	}
+	// Public Functions
 	return {
 
 		populateItemList(items) {
@@ -62,6 +84,18 @@ const UICtrl = (function() {
 				`;
 			}, '');
 			document.querySelector(UISelectors.itemList).innerHTML = HTMLItems;
+		},
+		getItemInput() {
+
+			return {
+
+				name: document.querySelector(UISelectors.itemNameInput).value,
+				calories: document.querySelector(UISelectors.itemCaloriesInput).value
+			}
+		},
+		getSelectors() {
+
+			return UISelectors;
 		}
 	}
 }());
@@ -69,12 +103,32 @@ const UICtrl = (function() {
 // APP CONTROLLER
 const App = (function(ItemCtrl, UICtrl) {
 
+	// Load Event Listeners
+	const loadEventListeners = function() {
+		// Get UI Selectors
+		const UISelectors = UICtrl.getSelectors();
+		// Add Item
+		document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
+	}
+	// Add ItemSubmit
+	const itemAddSubmit = e => {
+
+		e.preventDefault(e);
+
+		const input = UICtrl.getItemInput();
+		
+		if(input.name && input.calories) {
+
+			const newItem = ItemCtrl.addItem(input.name, input.calories);
+		}
+	}
 	return {
 
 		init() {
 
 			const items = ItemCtrl.getItems();
 			UICtrl.populateItemList(items);
+			loadEventListeners();
 		}
 	}
 }(ItemCtrl, UICtrl));
